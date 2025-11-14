@@ -189,6 +189,28 @@ Videos and discussion boards automatically adjust to screen size.
 - High contrast color scheme
 - Focus indicators for interactive elements
 
+## Troubleshooting
+
+### Updates Not Showing on GitHub Pages?
+
+If you've merged changes to `main` but don't see them on your GitHub Pages site:
+
+1. **Check deployment status**: Go to Actions tab → "Deploy to GitHub Pages" workflow → verify it completed successfully
+2. **Wait for propagation**: GitHub Pages CDN can take 2-5 minutes to update globally
+3. **Clear your browser cache**:
+   - Chrome: Ctrl+Shift+R (Cmd+Shift+R on Mac)
+   - Firefox: Ctrl+F5 (Cmd+Shift+R on Mac)
+   - Safari: Cmd+Option+R
+4. **Hard refresh the page**: Hold Shift while clicking the reload button
+5. **Check the version**: View page source and look for the version comment in the `<head>` section (e.g., `<!-- Version: 2025-11-14-v2 -->`)
+6. **Verify GitHub Pages settings**: Go to Settings → Pages → ensure "Source" is set to "GitHub Actions" (not "Deploy from a branch")
+
+### Checking Which Version is Deployed
+
+To verify which discussion IDs are in use:
+- **Module 2**: View source, search for "discussionId=" - should see 4, 5, 6, 7
+- **Module 3**: View source, search for "discussionId=" - should see 8, 9, 10, 11
+
 ## Support
 
 For issues or questions, please open an issue in this repository.
