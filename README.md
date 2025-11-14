@@ -2,7 +2,12 @@
 
 ## Course Module for Canvas LMS
 
-This repository contains an interactive online course module for Japan 110 with 4 distinct units, designed to be embedded as a page in Canvas LMS.
+This repository contains three interactive online course modules for Japan 110, each with 4 distinct units, designed to be embedded as a page in Canvas LMS.
+
+### Available Modules:
+1. **Module 1** (`index.html`) - "Pop Culture and the Warring States" - Classic design
+2. **Module 2** (`module2.html`) - "Pop Culture and Bakumatsu" - 2000s PS2 JRPG aesthetic
+3. **Module 3** (`module3.html`) - "Pop Culture and the Future" - 2020s Cyberpunk aesthetic
 
 ## Features
 
@@ -19,9 +24,20 @@ This repository contains an interactive online course module for Japan 110 with 
 
 ## Files
 
+### Module 1 (Original - "Pop Culture and the Warring States")
 - `index.html` - Main course module page with all 4 units
-- `styles.css` - Styling for visually distinct units and responsive design
+- `styles.css` - Classic styling for visually distinct units and responsive design
 - `script.js` - JavaScript for unit navigation and interactivity
+
+### Module 2 ("Pop Culture and Bakumatsu" - 2000s Style)
+- `module2.html` - Bakumatsu-themed module with 2000s PS2 JRPG aesthetics
+- `module2.css` - Vibrant purple/pink/gold neon styling with retro gaming look
+- Discussion widgets: 3, 4, 5, 6
+
+### Module 3 ("Pop Culture and the Future" - 2020s Style)
+- `module3.html` - Future-themed module with 2020s cyberpunk aesthetics
+- `module3.css` - Cyan/magenta neon with holographic effects
+- Discussion widgets: 8, 9, 10, 11
 
 ## Setup Instructions
 
@@ -85,28 +101,36 @@ UNIT_4_MEDIA_ID → Your Canvas media ID
 ```
 
 ### Updating Discussion Boards
-Each unit has a unique discussion board widget. Replace the placeholder discussion IDs:
+Each unit has a unique discussion board widget. 
+
+**For Module 1 (index.html)** - Replace the placeholder discussion IDs:
 
 **Unit 1 Discussion:**
 ```html
 <!-- Find and replace: -->
-UNIT_1_DISCUSSION_ID → Your Canvas discussion ID (e.g., 6735506)
+UNIT_1_DISCUSSION_ID → Your Canvas discussion ID (e.g., 1)
 ```
 
 **Unit 2 Discussion:**
 ```html
-UNIT_2_DISCUSSION_ID → Your Canvas discussion ID
+UNIT_2_DISCUSSION_ID → Your Canvas discussion ID (e.g., 2)
 ```
 
 **Unit 3 Discussion:**
 ```html
-UNIT_3_DISCUSSION_ID → Your Canvas discussion ID
+UNIT_3_DISCUSSION_ID → Your Canvas discussion ID (e.g., 3)
 ```
 
 **Unit 4 Discussion:**
 ```html
-UNIT_4_DISCUSSION_ID → Your Canvas discussion ID
+UNIT_4_DISCUSSION_ID → Your Canvas discussion ID (e.g., 4)
 ```
+
+**For Module 2 (module2.html)** - Pre-configured with discussion IDs 3, 4, 5, 6
+
+**For Module 3 (module3.html)** - Pre-configured with discussion IDs 8, 9, 10, 11
+
+> **Note**: Each module uses unique discussion board IDs to ensure separate discussions for each module's units.
 
 ### Quick Find & Replace
 You can use these commands to quickly update all placeholders:
