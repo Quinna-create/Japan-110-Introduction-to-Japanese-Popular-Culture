@@ -218,8 +218,20 @@ If you've merged changes to `main` but don't see them on your GitHub Pages site:
    - Firefox: Ctrl+F5 (Cmd+Shift+R on Mac)
    - Safari: Cmd+Option+R
 4. **Hard refresh the page**: Hold Shift while clicking the reload button
-5. **Check the version**: View page source and look for the version comment in the `<head>` section (e.g., `<!-- Version: 2025-11-14-v2 -->`)
+5. **Check the version**: View page source and look for the version comment in the `<head>` section (e.g., `<!-- Version: 2025-11-14-v4 -->`)
 6. **Verify GitHub Pages settings**: Go to Settings → Pages → ensure "Source" is set to "GitHub Actions" (not "Deploy from a branch")
+
+**Note:** CSS and JavaScript files now include version parameters (e.g., `styles.css?v=4`) to prevent browser caching issues. When making significant updates, increment the version number in all three HTML files (index.html, module2.html, module3.html) to force browsers to fetch the latest files.
+
+### How to Update Version Numbers for New Changes
+
+When you make changes to CSS or JavaScript files:
+
+1. Edit all three HTML files: `index.html`, `module2.html`, `module3.html`
+2. Find the lines with `?v=4` in the stylesheet and script references
+3. Increment the version number (e.g., change `?v=4` to `?v=5`)
+4. Update the version comment to match (e.g., change `v4` to `v5`)
+5. Commit and push - users will automatically get the latest files!
 
 ### Checking Which Version is Deployed
 
