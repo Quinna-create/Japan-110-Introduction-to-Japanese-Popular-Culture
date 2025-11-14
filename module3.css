@@ -513,6 +513,89 @@ body {
     min-height: 300px;
 }
 
+/* Discussion Header with Refresh Button */
+.discussion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.discussion-header h4 {
+    margin-bottom: 0;
+    color: #00ffff;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+                 0 0 20px rgba(0, 255, 255, 0.5),
+                 2px 2px 0px rgba(255, 0, 255, 0.3);
+    font-family: 'Orbitron', 'Courier New', monospace;
+}
+
+.refresh-discussion-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 2px solid rgba(0, 255, 255, 0.6);
+    background: linear-gradient(135deg, 
+        rgba(0, 255, 255, 0.2), 
+        rgba(255, 0, 255, 0.2));
+    color: #00ffff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5),
+                0 0 30px rgba(255, 0, 255, 0.3),
+                inset 0 0 15px rgba(0, 255, 255, 0.1);
+    white-space: nowrap;
+    font-family: 'Orbitron', 'Courier New', monospace;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+}
+
+.refresh-discussion-btn:hover {
+    background: linear-gradient(135deg, 
+        rgba(255, 0, 255, 0.3), 
+        rgba(0, 255, 255, 0.3));
+    border-color: rgba(255, 0, 255, 0.6);
+    color: #ff00ff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7),
+                0 0 40px rgba(255, 0, 255, 0.5),
+                inset 0 0 20px rgba(255, 0, 255, 0.2);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+}
+
+.refresh-discussion-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5),
+                inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.refresh-discussion-btn.refreshing {
+    opacity: 0.8;
+    cursor: wait;
+    animation: cyberpulse 1s infinite, holo-glitch 2s infinite;
+}
+
+@keyframes cyberpulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+@keyframes holo-glitch {
+    0%, 100% { 
+        text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+    }
+    50% { 
+        text-shadow: 0 0 8px rgba(255, 0, 255, 0.8);
+    }
+}
+
+
 /* Quiz Section - Neon Purple */
 .quiz-section {
     background: linear-gradient(135deg, 

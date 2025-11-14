@@ -15,11 +15,13 @@ This repository contains three interactive online course modules for Japan 110, 
 - **4 Visually Distinct Units**: Each unit is color-coded and can be navigated using buttons or keyboard arrows
 - **Smooth Navigation**: Switch between units with intuitive navigation buttons
 - **Persistent State**: Automatically remembers the last unit you were viewing
+- **Auto-Refresh Discussion Widgets**: Discussion boards automatically refresh when switching units to show latest posts
+- **Manual Refresh Option**: Each discussion board has a refresh button to manually reload content
 
 ### Each Unit Includes:
 1. **📖 Reading Material**: Links to textbook chapters and PDF resources
 2. **🎥 Video Lecture**: Embedded Canvas video player
-3. **💬 Discussion Board**: Live discussion widget showing recent posts
+3. **💬 Discussion Board**: Live discussion widget showing recent posts with automatic and manual refresh
 4. **✓ Quiz Link**: Direct link to Canvas quiz for the unit
 
 ## Files
@@ -168,6 +170,20 @@ The module is fully responsive and works on:
 - Mobile phones
 
 Videos and discussion boards automatically adjust to screen size.
+
+## Discussion Board Refresh Feature
+
+### Automatic Refresh
+When you navigate between units (using buttons or keyboard arrows), the discussion board automatically refreshes to show the latest posts. This ensures students always see up-to-date conversations.
+
+### Manual Refresh
+Each discussion board includes a **🔄 Refresh** button in the top-right corner:
+- Click the button to manually reload the discussion widget
+- Button shows "🔄 Refreshing..." while loading
+- Useful for checking for new posts without switching units
+- Works independently for each unit's discussion board
+
+**Cache Busting:** The refresh mechanism uses timestamp parameters to prevent browsers from showing cached content, ensuring you always see the most recent discussions.
 
 ## Keyboard Navigation
 
