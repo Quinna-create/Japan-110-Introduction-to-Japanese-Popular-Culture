@@ -109,48 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
             loadingDiv.style.display = 'none';
         });
     });
-    
-    // Add refresh button event listeners
-    const refreshButtons = document.querySelectorAll('.refresh-discussion-btn');
-    refreshButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const discussionContent = this.closest('.discussion-content');
-            const iframe = discussionContent.querySelector('iframe');
-            
-            if (iframe && iframe.src) {
-                // Show visual feedback
-                this.classList.add('refreshing');
-                this.textContent = '🔄 Refreshing...';
-                
-                // Force reload the iframe
-                const originalSrc = iframe.src;
-                const baseUrl = originalSrc.split('?')[0];
-                const params = new URLSearchParams(originalSrc.split('?')[1]);
-                
-                // Remove old timestamp if exists
-                params.delete('_t');
-                
-                // Add new timestamp to prevent caching
-                params.set('_t', Date.now());
-                
-                // Update iframe src
-                iframe.src = `${baseUrl}?${params.toString()}`;
-                
-                // Reset button after iframe loads
-                iframe.addEventListener('load', function handleLoad() {
-                    button.classList.remove('refreshing');
-                    button.textContent = '🔄 Refresh';
-                    iframe.removeEventListener('load', handleLoad);
-                }, { once: true });
-                
-                // Reset button after timeout as fallback
-                setTimeout(() => {
-                    button.classList.remove('refreshing');
-                    button.textContent = '🔄 Refresh';
-                }, 3000);
-            }
-        });
-    });
 });
 
 // Optional: Function to update video or discussion URLs for each unit
