@@ -137,6 +137,14 @@ body {
     gap: 0.5rem;
 }
 
+/* To-Do List and Reading Wrapper */
+.todo-reading-wrapper {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
 /* To-Do List Section */
 .todo-section {
     background-color: #f5f5ff;
@@ -144,9 +152,9 @@ body {
 }
 
 .todo-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     margin-top: 1rem;
 }
 
@@ -219,10 +227,9 @@ body {
 }
 
 .video-discussion-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: 1.5rem;
-    align-items: start;
+    position: relative;
+    width: 100%;
+    min-height: 445px;
 }
 
 .video-discussion-wrapper .video-content {
@@ -237,13 +244,19 @@ body {
 }
 
 .video-discussion-wrapper .discussion-content {
-    position: sticky;
-    top: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 380px;
+    max-height: 400px;
     background-color: #f0fff4;
     border-radius: 8px;
     padding: 1rem;
     border: 1px solid #4caf50;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    z-index: 10;
+    resize: both;
+    overflow: auto;
 }
 
 .video-discussion-wrapper .discussion-content h4 {
@@ -253,12 +266,16 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    cursor: move;
 }
 
 .video-discussion-wrapper .discussion-content iframe {
     border: none;
     border-radius: 8px;
     background-color: white;
+    width: 100%;
+    height: calc(100% - 40px);
+    min-height: 300px;
 }
 
 /* Video Section (legacy, kept for compatibility) */
@@ -367,8 +384,11 @@ body {
 
     /* Stack video and discussion vertically on mobile */
     .video-discussion-wrapper {
-        grid-template-columns: 1fr;
+        position: static;
+        display: flex;
+        flex-direction: column;
         gap: 1rem;
+        min-height: auto;
     }
 
     .video-discussion-wrapper .video-content iframe {
@@ -380,15 +400,26 @@ body {
     .video-discussion-wrapper .discussion-content {
         position: static;
         width: 100%;
+        max-height: 400px;
+        bottom: auto;
+        right: auto;
+        resize: none;
     }
 
     .video-discussion-wrapper .discussion-content iframe {
-        height: 400px;
+        height: 300px;
+    }
+
+    /* To-do and reading wrapper responsive */
+    .todo-reading-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     /* To-do list responsive */
     .todo-list {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
     }
 }
 
