@@ -35,19 +35,24 @@ This repository contains an interactive online course module for Japan 110 with 
 6. Add the CSS and JavaScript inline or link to hosted versions
 7. Click **Save**
 
-### Option 2: Host on GitHub Pages
+### Option 2: Host on GitHub Pages (Recommended for Easy Updates)
 
-1. Enable GitHub Pages in repository settings
-2. Set source to main branch
-3. Your page will be available at: `https://[username].github.io/[repo-name]/`
-4. Embed in Canvas using an iframe:
+**This repository is configured for automatic GitHub Pages deployment!**
+
+1. In repository settings, go to **Settings** → **Pages**
+2. Under "Build and deployment", set source to **GitHub Actions**
+3. Push changes to the `main` branch - the site will automatically deploy
+4. Your page will be available at: `https://quinna-create.github.io/Japan-110-Introduction-to-Japanese-Popular-Culture/`
+5. Embed in Canvas using an iframe:
    ```html
-   <iframe src="https://your-username.github.io/Japan-110-Introduction-to-Japanese-Popular-Culture/" 
+   <iframe src="https://quinna-create.github.io/Japan-110-Introduction-to-Japanese-Popular-Culture/" 
            width="100%" 
            height="800px" 
            style="border: none;">
    </iframe>
    ```
+
+**✅ Automatic Updates:** Every time you merge a PR to the `main` branch, GitHub Actions will automatically rebuild and deploy your site within 1-2 minutes!
 
 ## Customization
 

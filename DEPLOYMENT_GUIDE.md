@@ -93,28 +93,38 @@ Find all quiz button links and replace with Canvas quiz URLs:
 
 #### Option B: GitHub Pages (Recommended for Easy Updates)
 
-1. In your repository settings, enable GitHub Pages
-2. Choose branch: `main` or your current branch
-3. Your module will be available at:
+**✅ This repository includes automatic GitHub Pages deployment via GitHub Actions!**
+
+1. In your repository settings, go to **Settings** → **Pages**
+2. Under "Build and deployment", set source to **GitHub Actions** (not "Deploy from a branch")
+3. The GitHub Actions workflow will automatically deploy on every push to `main`
+4. Your module will be available at:
    ```
    https://quinna-create.github.io/Japan-110-Introduction-to-Japanese-Popular-Culture/
    ```
-4. In Canvas, create a new Page
-5. Click the HTML Editor button (`</>`)
-6. Add this iframe:
+5. In Canvas, create a new Page
+6. Click the HTML Editor button (`</>`)
+7. Add this iframe:
    ```html
    <iframe 
-     src="https://quinna-create.github.io/Japan-110-Introduction-to-Japanese-Popular-Culture/index.html" 
+     src="https://quinna-create.github.io/Japan-110-Introduction-to-Japanese-Popular-Culture/" 
      width="100%" 
      height="800px" 
      style="border: none;">
    </iframe>
    ```
-7. Adjust height as needed
-8. Click **Save**
+8. Adjust height as needed
+9. Click **Save**
 
-**Pros:** Easy to update, separate concerns
-**Cons:** Requires external hosting
+**Pros:** 
+- Automatic deployment on every update to main branch
+- Easy to update (just merge PRs)
+- Separate concerns
+- Version control for all changes
+
+**Cons:** Requires external hosting (but it's free!)
+
+**🚀 Updates Deploy Automatically:** Every time you merge a PR to `main`, GitHub Actions rebuilds and redeploys your site in 1-2 minutes!
 
 #### Option C: Canvas File Upload
 
