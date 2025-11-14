@@ -340,6 +340,59 @@ body {
     min-height: 300px;
 }
 
+/* Discussion Header with Refresh Button */
+.discussion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.discussion-header h4 {
+    margin-bottom: 0;
+    color: #2a2a2a;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+    font-family: 'Courier New', monospace;
+}
+
+.refresh-discussion-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 2px solid #8b7e74;
+    background-color: #b89d9d;
+    color: #2a2a2a;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 0px #5a4a54;
+    white-space: nowrap;
+    font-family: 'Courier New', monospace;
+}
+
+.refresh-discussion-btn:hover {
+    background-color: #9b8b9e;
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px #5a4a54;
+}
+
+.refresh-discussion-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+.refresh-discussion-btn.refreshing {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+
 /* Video Section (legacy, kept for compatibility) */
 .video-section {
     background: linear-gradient(135deg, #d4b8c8 0%, #c8dde0 100%);
