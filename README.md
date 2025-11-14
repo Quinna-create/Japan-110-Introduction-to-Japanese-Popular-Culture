@@ -32,7 +32,7 @@ This repository contains three interactive online course modules for Japan 110, 
 ### Module 2 ("Pop Culture and Bakumatsu" - 2000s Style)
 - `module2.html` - Bakumatsu-themed module with 2000s PS2 JRPG aesthetics
 - `module2.css` - Vibrant purple/pink/gold neon styling with retro gaming look
-- Discussion widgets: 3, 4, 5, 6
+- Discussion widgets: 4, 5, 6, 7
 
 ### Module 3 ("Pop Culture and the Future" - 2020s Style)
 - `module3.html` - Future-themed module with 2020s cyberpunk aesthetics
@@ -126,7 +126,7 @@ UNIT_3_DISCUSSION_ID → Your Canvas discussion ID (e.g., 3)
 UNIT_4_DISCUSSION_ID → Your Canvas discussion ID (e.g., 4)
 ```
 
-**For Module 2 (module2.html)** - Pre-configured with discussion IDs 3, 4, 5, 6
+**For Module 2 (module2.html)** - Pre-configured with discussion IDs 4, 5, 6, 7
 
 **For Module 3 (module3.html)** - Pre-configured with discussion IDs 8, 9, 10, 11
 
