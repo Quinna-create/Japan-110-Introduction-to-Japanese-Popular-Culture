@@ -1,0 +1,667 @@
+/* Reset and Base Styles - PS2 JRPG 2000s Aesthetic */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background: #1a0033;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 20, 147, 0.2) 0%, transparent 50%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(138, 43, 226, 0.05) 2px, rgba(138, 43, 226, 0.05) 4px);
+    background-attachment: fixed;
+    image-rendering: pixelated;
+}
+
+/* Course Container - JRPG Window Style */
+.course-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #2a0845 0%, #1a1a3e 50%, #0d0d2b 100%);
+    min-height: 100vh;
+    box-shadow: 
+        0 0 30px rgba(138, 43, 226, 0.5),
+        inset 0 0 50px rgba(0, 0, 0, 0.5),
+        0 8px 32px rgba(0, 0, 0, 0.8);
+    border: 3px solid #8a2be2;
+    border-radius: 8px;
+    position: relative;
+}
+
+.course-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(138, 43, 226, 0.03) 2px,
+            rgba(138, 43, 226, 0.03) 4px
+        );
+    pointer-events: none;
+    border-radius: 5px;
+}
+
+/* Header Styles - JRPG Title Screen */
+.course-header {
+    background: linear-gradient(135deg, #4a0e7a 0%, #8a2be2 50%, #ff1493 100%);
+    color: #ffffff;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 
+        0 4px 0 #2d0854,
+        0 8px 20px rgba(138, 43, 226, 0.6),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2);
+    border-bottom: 4px solid #ff1493;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+.course-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.05) 10px,
+            rgba(255, 255, 255, 0.05) 20px
+        );
+    pointer-events: none;
+}
+
+.course-header::after {
+    content: '★';
+    position: absolute;
+    font-size: 3rem;
+    color: rgba(255, 223, 0, 0.3);
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+.course-header h1,
+.course-header h2 {
+    position: relative;
+    z-index: 1;
+    text-shadow: 
+        2px 2px 0px #2d0854,
+        4px 4px 8px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 20, 147, 0.5);
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    letter-spacing: 2px;
+}
+
+.course-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: #ffdf00;
+    text-transform: uppercase;
+}
+
+.course-header h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #ff69b4;
+}
+
+/* Navigation Styles - JRPG Menu */
+.unit-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1a0033 0%, #2d0854 100%);
+    border-bottom: 3px solid #8a2be2;
+    flex-wrap: wrap;
+    box-shadow: 
+        0 3px 0 #2d0854,
+        inset 0 1px 0 rgba(138, 43, 226, 0.5);
+}
+
+.nav-btn {
+    padding: 0.9rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 3px solid #8a2be2;
+    background: linear-gradient(135deg, #4a0e7a 0%, #6a2ea5 100%);
+    color: #ffdf00;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 0 #2d0854,
+        0 6px 15px rgba(138, 43, 226, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+.nav-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.nav-btn:hover {
+    background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 0 #8a2be2,
+        0 10px 25px rgba(255, 20, 147, 0.6);
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #ff1493 0%, #8a2be2 100%);
+    color: #ffffff;
+    box-shadow: 
+        inset 0 3px 8px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(255, 20, 147, 0.8);
+    transform: scale(1.05);
+}
+
+/* Units Wrapper */
+.units-wrapper {
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(26, 0, 51, 0.9) 0%, rgba(13, 13, 43, 0.9) 100%);
+}
+
+/* Unit Styles */
+.unit {
+    display: none;
+    animation: slideIn 0.5s ease-out;
+}
+
+.unit.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.unit-header {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-bottom: 3px solid #8a2be2;
+    background: linear-gradient(90deg, 
+        rgba(138, 43, 226, 0.2) 0%, 
+        rgba(255, 20, 147, 0.2) 50%, 
+        rgba(138, 43, 226, 0.2) 100%);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+}
+
+.unit-header h2 {
+    color: #ffdf00;
+    font-size: 2rem;
+    text-shadow: 
+        2px 2px 0px #2d0854,
+        3px 3px 10px rgba(255, 20, 147, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+/* Section Styles - JRPG Dialog Box */
+.section {
+    background: linear-gradient(135deg, 
+        rgba(42, 8, 69, 0.95) 0%, 
+        rgba(26, 26, 62, 0.95) 100%);
+    border: 3px solid #8a2be2;
+    border-radius: 12px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    box-shadow: 
+        0 5px 0 #2d0854,
+        0 8px 25px rgba(138, 43, 226, 0.4),
+        inset 0 1px 0 rgba(138, 43, 226, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.section:hover {
+    box-shadow: 
+        0 5px 0 #2d0854,
+        0 10px 30px rgba(255, 20, 147, 0.5),
+        inset 0 1px 0 rgba(255, 20, 147, 0.4);
+    transform: translateY(-2px);
+}
+
+.section h3 {
+    color: #ff69b4;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 
+        1px 1px 0px #2d0854,
+        2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+/* To-Do List and Reading Wrapper */
+.todo-reading-wrapper {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* To-Do List Section - Hot Pink/Magenta */
+.todo-section {
+    background: linear-gradient(135deg, 
+        rgba(255, 20, 147, 0.3) 0%, 
+        rgba(138, 43, 226, 0.3) 100%);
+    border: 3px solid #ff1493;
+    box-shadow: 
+        0 5px 0 #8a0045,
+        0 8px 25px rgba(255, 20, 147, 0.5);
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 1rem;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.2rem;
+    background: linear-gradient(135deg, 
+        rgba(42, 8, 69, 0.8) 0%, 
+        rgba(26, 26, 62, 0.8) 100%);
+    border-radius: 8px;
+    border: 2px solid #ff69b4;
+    box-shadow: 
+        0 3px 0 #8a0045,
+        0 5px 15px rgba(255, 20, 147, 0.3);
+    transition: all 0.2s ease;
+}
+
+.todo-item:hover {
+    transform: translateX(5px);
+    box-shadow: 
+        0 3px 0 #8a0045,
+        0 8px 20px rgba(255, 20, 147, 0.6);
+    border-color: #ffdf00;
+}
+
+.todo-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.todo-text {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Reading Section - Cyan/Blue */
+.reading-section {
+    background: linear-gradient(135deg, 
+        rgba(0, 191, 255, 0.3) 0%, 
+        rgba(138, 43, 226, 0.3) 100%);
+    border: 3px solid #00bfff;
+    box-shadow: 
+        0 5px 0 #005f7f,
+        0 8px 25px rgba(0, 191, 255, 0.5);
+}
+
+.reading-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.reading-content li {
+    margin-bottom: 0.9rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.reading-content li::before {
+    content: "⭐";
+    position: absolute;
+    left: 0;
+    font-size: 1.3rem;
+}
+
+.reading-link {
+    color: #00bfff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.reading-link:hover {
+    color: #ffdf00;
+    text-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+    text-decoration: underline;
+}
+
+/* Video and Discussion Combined Section */
+.video-discussion-section {
+    background: linear-gradient(135deg, 
+        rgba(138, 43, 226, 0.3) 0%, 
+        rgba(75, 0, 130, 0.3) 100%);
+    border: 3px solid #9370db;
+    box-shadow: 
+        0 5px 0 #4b0082,
+        0 8px 25px rgba(138, 43, 226, 0.5);
+}
+
+.video-discussion-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 445px;
+}
+
+.video-discussion-wrapper .video-content {
+    width: 100%;
+}
+
+.video-discussion-wrapper .video-content iframe {
+    width: 100% !important;
+    height: 445px;
+    border-radius: 8px;
+    border: 3px solid #8a2be2;
+    box-shadow: 
+        0 5px 0 #2d0854,
+        0 8px 25px rgba(138, 43, 226, 0.5);
+}
+
+.video-discussion-wrapper .discussion-content {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 380px;
+    max-height: 400px;
+    background: linear-gradient(135deg, 
+        rgba(255, 20, 147, 0.95) 0%, 
+        rgba(138, 43, 226, 0.95) 100%);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 3px solid #ffdf00;
+    box-shadow: 
+        0 5px 0 #8a0045,
+        0 10px 30px rgba(255, 20, 147, 0.7);
+    z-index: 10;
+    resize: both;
+    overflow: auto;
+}
+
+.video-discussion-wrapper .discussion-content h4 {
+    margin-bottom: 0.75rem;
+    color: #ffdf00;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: move;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+.video-discussion-wrapper .discussion-content iframe {
+    border: 2px solid #8a2be2;
+    border-radius: 6px;
+    background-color: rgba(26, 0, 51, 0.9);
+    width: 100%;
+    height: calc(100% - 40px);
+    min-height: 300px;
+}
+
+/* Quiz Section - Gold/Yellow */
+.quiz-section {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.3) 0%, 
+        rgba(255, 140, 0, 0.3) 100%);
+    border: 3px solid #ffdf00;
+    box-shadow: 
+        0 5px 0 #8a6d00,
+        0 8px 25px rgba(255, 215, 0, 0.5);
+    text-align: center;
+}
+
+.quiz-link {
+    text-decoration: none;
+}
+
+.quiz-button {
+    background: linear-gradient(135deg, #ffdf00 0%, #ff8c00 100%);
+    color: #1a0033;
+    border: 3px solid #8a6d00;
+    padding: 1.2rem 3.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 5px 0 #8a6d00,
+        0 8px 20px rgba(255, 215, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-button::before {
+    content: '★';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    animation: starSlide 2s linear infinite;
+}
+
+@keyframes starSlide {
+    0% { left: -30px; }
+    100% { left: 110%; }
+}
+
+.quiz-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 8px 0 #8a6d00,
+        0 12px 30px rgba(255, 215, 0, 0.8);
+    background: linear-gradient(135deg, #ff8c00 0%, #ffdf00 100%);
+}
+
+.quiz-description {
+    margin-top: 1rem;
+    color: #00bfff;
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .course-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .course-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .unit-navigation {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .nav-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .units-wrapper {
+        padding: 1rem;
+    }
+
+    .section {
+        padding: 1.2rem;
+    }
+
+    .video-content iframe {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+
+    .quiz-button {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+    }
+
+    .video-discussion-wrapper {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        min-height: auto;
+    }
+
+    .video-discussion-wrapper .video-content iframe {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        min-height: unset;
+    }
+
+    .video-discussion-wrapper .discussion-content {
+        position: static;
+        width: 100%;
+        max-height: 400px;
+        bottom: auto;
+        right: auto;
+        resize: none;
+    }
+
+    .video-discussion-wrapper .discussion-content iframe {
+        height: 300px;
+    }
+
+    .todo-reading-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .todo-list {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Accessibility */
+.nav-btn:focus,
+.quiz-button:focus,
+.reading-link:focus {
+    outline: 3px solid #ffdf00;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(255, 223, 0, 0.3);
+}
+
+/* Print Styles */
+@media print {
+    .unit-navigation {
+        display: none;
+    }
+
+    .unit {
+        display: block !important;
+        page-break-after: always;
+    }
+
+    .section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
+
+/* Hello Kitty Decorative Elements */
+body::after {
+    content: '🎀';
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.3;
+    animation: float 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
