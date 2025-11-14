@@ -137,6 +137,46 @@ body {
     gap: 0.5rem;
 }
 
+/* To-Do List Section */
+.todo-section {
+    background-color: #f5f5ff;
+    border-left: 4px solid #667eea;
+}
+
+.todo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+}
+
+.todo-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.todo-text {
+    font-size: 0.95rem;
+    color: #495057;
+    font-weight: 500;
+}
+
 /* Reading Section */
 .reading-section {
     background-color: #fff8f0;
@@ -172,7 +212,56 @@ body {
     text-decoration: underline;
 }
 
-/* Video Section */
+/* Video and Discussion Combined Section */
+.video-discussion-section {
+    background-color: #f0f4ff;
+    border-left: 4px solid #667eea;
+}
+
+.video-discussion-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.video-discussion-wrapper .video-content {
+    width: 100%;
+}
+
+.video-discussion-wrapper .video-content iframe {
+    width: 100% !important;
+    height: 445px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.video-discussion-wrapper .discussion-content {
+    position: sticky;
+    top: 20px;
+    background-color: #f0fff4;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #4caf50;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.video-discussion-wrapper .discussion-content h4 {
+    margin-bottom: 0.75rem;
+    color: #495057;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.video-discussion-wrapper .discussion-content iframe {
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+}
+
+/* Video Section (legacy, kept for compatibility) */
 .video-section {
     background-color: #f0f4ff;
     border-left: 4px solid #667eea;
@@ -274,6 +363,32 @@ body {
     .quiz-button {
         padding: 0.75rem 2rem;
         font-size: 1rem;
+    }
+
+    /* Stack video and discussion vertically on mobile */
+    .video-discussion-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .video-discussion-wrapper .video-content iframe {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        min-height: unset;
+    }
+
+    .video-discussion-wrapper .discussion-content {
+        position: static;
+        width: 100%;
+    }
+
+    .video-discussion-wrapper .discussion-content iframe {
+        height: 400px;
+    }
+
+    /* To-do list responsive */
+    .todo-list {
+        grid-template-columns: 1fr;
     }
 }
 
